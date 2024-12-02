@@ -7,15 +7,18 @@
   <meta name="theme-color" content="#f8f9fa">
   <meta name="description" content="Queen Never Cry Meme generator tool to easily create Queen Never Cry memes by uploading images or taking a photo.">
   <title>Queen Never Cry Meme Generator</title>
-<script>
-        // 检查当前页面是否在 iframe 中
-        if (window.top === window.self) {
-            // 检查当前页面的 URL
-            if (window.location.href === "https://memegenerator-4a8.pages.dev/" || 
-                window.location.href === "https://meme.queennevercry.org/") {
-                // 跳转到目标页面
-                window.location.href = "https://queennevercry.org/makememe/";
-            }
+ <script>
+        // 检查当前页面的 URL
+        const currentUrl = window.location.href;
+        const redirectUrls = [
+            "https://memegenerator-4a8.pages.dev/",
+            "https://meme.queennevercry.org/"
+        ];
+
+        // 如果当前 URL 在重定向列表中，并且不在 iframe 中
+        if (redirectUrls.includes(currentUrl) && window.top === window.self) {
+            // 跳转到目标页面
+            window.location.href = "https://queennevercry.org/makememe/";
         }
     </script>
   <link rel="manifest" href="manifest.webmanifest">
